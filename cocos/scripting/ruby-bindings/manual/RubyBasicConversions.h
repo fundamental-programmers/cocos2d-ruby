@@ -98,7 +98,7 @@ static void ruby_cocos2dx_Ref_finalize(mrb_state *mrb, void *ptr)
 static struct mrb_data_type ruby_cocos2dx_Ref_type = {"cc::Ref", ruby_cocos2dx_Ref_finalize};
 
 template <class T>
-struct mrb_data_type* getRubyDataType(T* ret)
+mrb_data_type* getRubyDataType(T* ret)
 {
     if (std::is_base_of<cocos2d::Ref, T>::value) {
         return &ruby_cocos2dx_Ref_type;

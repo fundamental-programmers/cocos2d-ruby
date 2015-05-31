@@ -370,7 +370,7 @@ bool rubyval_to_carray_float(mrb_state* mrb, mrb_value arg, float** outValue, co
     }
     
     mrb_int len = mrb_ary_len(mrb, arg);
-    float arr[len];
+    float * arr = new float[len];
     for (mrb_int i = 0; i < len; i++) {
         mrb_value val = mrb_ary_ref(mrb, arg, i);
         if (! mrb_float_p(val)) {
