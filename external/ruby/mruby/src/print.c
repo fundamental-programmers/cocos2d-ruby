@@ -27,13 +27,8 @@ MRB_API void
 mrb_p(mrb_state *mrb, mrb_value obj)
 {
 #ifdef ENABLE_STDIO
-  mrb_value val;
-
-  val = mrb_funcall(mrb, obj, "inspect", 0);
-  if (!mrb_string_p(val)) {
-    val = mrb_obj_as_string(mrb, obj);
-  }
-  printstr(mrb, val);
+  obj = mrb_funcall(mrb, obj, "inspect", 0);
+  printstr(mrb, obj);
   putc('\n', stdout);
 #endif
 }

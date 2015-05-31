@@ -28,11 +28,9 @@ THE SOFTWARE.
 #include "ConsoleCommand.h"
 #include "cocos2d.h"
 #include "ConfigParser.h"
-#include "lua_debugger.h"
-#include "CCLuaEngine.h"
-#include "LuaBasicConversions.h"
+#include "RubyEngine.h"
 
-#include "RuntimeLuaImpl.h"
+#include "RuntimeRubyImpl.h"
 #include "RuntimeCCSImpl.h"
 
 #if ((CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC))
@@ -145,11 +143,11 @@ void RuntimeEngine::setupRuntime()
 #endif
 
     // Lua
-    if ((entryFile.rfind(".lua") != std::string::npos) ||
-        (entryFile.rfind(".luac") != std::string::npos))
+    if ((entryFile.rfind(".rb") != std::string::npos) ||
+        (entryFile.rfind(".mrb") != std::string::npos))
     {
-        _launchEvent = "lua";
-        _runtime = RuntimeLuaImpl::create();
+        _launchEvent = "ruby";
+        _runtime = RuntimeRubyImpl::create();
     }
     // Js
     else if ((entryFile.rfind(".js") != std::string::npos) ||

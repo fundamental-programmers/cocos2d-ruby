@@ -129,9 +129,6 @@ class String
   # Modify +self+ by replacing the content of +self+
   # at the position +pos+ with +value+.
   def []=(pos, value)
-    if pos < 0
-      pos += self.length
-    end
     b = self[0, pos]
     a = self[pos+1..-1]
     self.replace([b, value, a].join(''))
@@ -149,16 +146,7 @@ class String
   ##
   # ISO 15.2.10.5.27
   def match(re, &block)
-    if re.respond_to? :to_str
-      if Object.const_defined?(:Regexp)
-        r = Regexp.new(re)
-        r.match(self, &block)
-      else
-        raise NotImplementedError, "String#match needs Regexp class"
-      end
-    else
-      re.match(self, &block)
-    end
+    re.match(self, &block)
   end
 end
 

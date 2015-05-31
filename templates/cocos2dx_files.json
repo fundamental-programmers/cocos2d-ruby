@@ -6391,6 +6391,8 @@
         "external/ruby/mruby/include/mruby/variable.h",
         "external/ruby/mruby/include/mruby/version.h",
         "external/ruby/mruby/include/mruby.h",
+        "external/ruby/mruby/lib/prebuilt/win32/libmruby.lib",
+        "external/ruby/mruby/lib/prebuilt/win32/libmruby_core.lib",
         "external/ruby/mruby/LEGAL",
         "external/ruby/mruby/MITL",
         "external/ruby/mruby/mrbgems/gem_init.c",

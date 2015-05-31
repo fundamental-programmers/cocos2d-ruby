@@ -63,7 +63,7 @@
       <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS_DEBUG;COCOS2D_DEBUG=1;GLFW_EXPOSE_NATIVE_WIN32;GLFW_EXPOSE_NATIVE_WGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>
       </SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\lib\protobuf-lite;$(ProjectDir)..\lib;$(EngineRoot)external\win32-specific\zlib\include;$(EngineRoot)cocos\scripting\lua-bindings\auto;$(EngineRoot)cocos\scripting\lua-bindings\manual;$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\lua\lua;$(EngineRoot)external\lua\tolua;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)external\curl\include\win32;$(EngineRoot)extensions;$(EngineRoot);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\lib\protobuf-lite;$(ProjectDir)..\lib;$(EngineRoot)external\win32-specific\zlib\include;$(EngineRoot)cocos\scripting\ruby-bindings\auto;$(EngineRoot)cocos\scripting\ruby-bindings\manual;$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\ruby\mruby\include;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)external\curl\include\win32;$(EngineRoot)extensions;$(EngineRoot);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -154,13 +154,12 @@
     <ClInclude Include="..\lib\runtime\ConnectWaitLayer.h" />
     <ClInclude Include="..\lib\runtime\ConsoleCommand.h" />
     <ClInclude Include="..\lib\runtime\FileServer.h" />
-    <ClInclude Include="..\lib\runtime\lua_debugger.h" />
     <ClInclude Include="..\lib\runtime\Protos.pb.h" />
     <ClInclude Include="..\lib\runtime\ResData.h" />
     <ClInclude Include="..\lib\runtime\Runtime.h" />
     <ClInclude Include="..\lib\runtime\RuntimeCCSImpl.h" />
-    <ClInclude Include="..\lib\runtime\RuntimeLuaImpl.h" />
     <ClInclude Include="..\lib\runtime\RuntimeProtocol.h" />
+    <ClInclude Include="..\lib\runtime\RuntimeRubyImpl.h" />
     <ClInclude Include="..\lib\runtime\VisibleRect.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -202,15 +201,14 @@
     <ClCompile Include="..\lib\runtime\ConsoleCommand.cpp" />
     <ClCompile Include="..\lib\runtime\FileServer.cpp" />
     <ClCompile Include="..\lib\runtime\Landscape_png.cpp" />
-    <ClCompile Include="..\lib\runtime\lua_debugger.c" />
     <ClCompile Include="..\lib\runtime\PlayDisable_png.cpp" />
     <ClCompile Include="..\lib\runtime\PlayEnable_png.cpp" />
     <ClCompile Include="..\lib\runtime\Portrait_png.cpp" />
     <ClCompile Include="..\lib\runtime\Protos.pb.cc" />
     <ClCompile Include="..\lib\runtime\Runtime.cpp" />
     <ClCompile Include="..\lib\runtime\RuntimeCCSImpl.cpp" />
-    <ClCompile Include="..\lib\runtime\RuntimeLuaImpl.cpp" />
     <ClCompile Include="..\lib\runtime\RuntimeProtocol.cpp" />
+    <ClCompile Include="..\lib\runtime\RuntimeRubyImpl.cpp" />
     <ClCompile Include="..\lib\runtime\Shine_png.cpp" />
     <ClCompile Include="..\lib\runtime\VisibleRect.cpp" />
     <ClCompile Include="Runtime_win32.cpp" />

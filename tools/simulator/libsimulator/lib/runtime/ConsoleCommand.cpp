@@ -28,7 +28,7 @@ THE SOFTWARE.
 #include "json/document.h"
 #include "json/filestream.h"
 #include "json/stringbuffer.h"
-#include "CCLuaEngine.h"
+#include "RubyEngine.h"
 
 #include "RuntimeProtocol.h"
 #include "cocos2d.h"
@@ -40,36 +40,8 @@ static void resetLuaModule(const string& fileName)
     {
         return;
     }
-    auto engine = LuaEngine::getInstance();
-    LuaStack* luaStack = engine->getLuaStack();
-    lua_State* stack = luaStack->getLuaState();
-    lua_getglobal(stack, "package");                         /* L: package */
-    lua_getfield(stack, -1, "loaded");                       /* L: package loaded */
-    lua_pushnil(stack);                                     /* L: lotable ?-.. nil */
-    while (0 != lua_next(stack, -2))                     /* L: lotable ?-.. key value */
-    {
-        //CCLOG("%s - %s \n", tolua_tostring(stack, -2, ""), lua_typename(stack, lua_type(stack, -1)));
-        std::string key = tolua_tostring(stack, -2, "");
-        std::string tableKey = key;
-        size_t found = tableKey.rfind(".lua");
-        if (found != std::string::npos)
-            tableKey = tableKey.substr(0, found);
-        tableKey = replaceAll(tableKey, ".", "/");
-        tableKey = replaceAll(tableKey, "\\", "/");
-        tableKey.append(".lua");
-        found = fileName.rfind(tableKey);
-        if (0 == found || (found != std::string::npos && fileName.at(found - 1) == '/'))
-        {
-            lua_pushstring(stack, key.c_str());
-            lua_pushnil(stack);
-            if (lua_istable(stack, -5))
-            {
-                lua_settable(stack, -5);
-            }
-        }
-        lua_pop(stack, 1);
-    }
-    lua_pop(stack, 2);
+    auto engine = RubyEngine::getInstance();
+	// Should reload here.
 }
 
 ConsoleCommand* ConsoleCommand::s_sharedConsoleCommand = nullptr;

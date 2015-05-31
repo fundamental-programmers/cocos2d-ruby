@@ -118,9 +118,6 @@
     <ClInclude Include="..\lib\runtime\FileServer.h">
       <Filter>runtime</Filter>
     </ClInclude>
-    <ClInclude Include="..\lib\runtime\lua_debugger.h">
-      <Filter>runtime</Filter>
-    </ClInclude>
     <ClInclude Include="..\lib\runtime\Protos.pb.h">
       <Filter>runtime</Filter>
     </ClInclude>
@@ -131,9 +128,6 @@
       <Filter>runtime</Filter>
     </ClInclude>
     <ClInclude Include="..\lib\runtime\RuntimeCCSImpl.h">
-      <Filter>runtime</Filter>
-    </ClInclude>
-    <ClInclude Include="..\lib\runtime\RuntimeLuaImpl.h">
       <Filter>runtime</Filter>
     </ClInclude>
     <ClInclude Include="..\lib\runtime\RuntimeProtocol.h">
@@ -223,6 +217,9 @@
     <ClInclude Include="..\lib\protobuf-lite\google\protobuf\stubs\type_traits.h">
       <Filter>runtime\protobuf-lite\stubs</Filter>
     </ClInclude>
+    <ClInclude Include="..\lib\runtime\RuntimeRubyImpl.h">
+      <Filter>runtime</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\lib\network\CCHTTPRequest.cpp">
@@ -296,9 +293,6 @@
     <ClCompile Include="..\lib\runtime\Landscape_png.cpp">
       <Filter>runtime</Filter>
     </ClCompile>
-    <ClCompile Include="..\lib\runtime\lua_debugger.c">
-      <Filter>runtime</Filter>
-    </ClCompile>
     <ClCompile Include="..\lib\runtime\PlayDisable_png.cpp">
       <Filter>runtime</Filter>
     </ClCompile>
@@ -315,9 +309,6 @@
       <Filter>runtime</Filter>
     </ClCompile>
     <ClCompile Include="..\lib\runtime\RuntimeCCSImpl.cpp">
-      <Filter>runtime</Filter>
-    </ClCompile>
-    <ClCompile Include="..\lib\runtime\RuntimeLuaImpl.cpp">
       <Filter>runtime</Filter>
     </ClCompile>
     <ClCompile Include="..\lib\runtime\RuntimeProtocol.cpp">
@@ -367,6 +358,9 @@
     </ClCompile>
     <ClCompile Include="..\lib\protobuf-lite\google\protobuf\stubs\stringprintf.cc">
       <Filter>runtime\protobuf-lite\stubs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\runtime\RuntimeRubyImpl.cpp">
+      <Filter>runtime</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

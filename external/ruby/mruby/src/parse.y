@@ -1468,7 +1468,7 @@ mlhs            : mlhs_basic
 mlhs_inner      : mlhs_basic
                 | tLPAREN mlhs_inner rparen
                     {
-                      $$ = $2;
+                      $$ = list1($2);
                     }
                 ;
 
@@ -1517,7 +1517,7 @@ mlhs_basic      : mlhs_list
 mlhs_item       : mlhs_node
                 | tLPAREN mlhs_inner rparen
                     {
-                      $$ = new_masgn(p, $2, NULL);
+                      $$ = $2;
                     }
                 ;
 
@@ -6329,9 +6329,10 @@ mrb_parser_dump(mrb_state *mrb, node *tree, int offset)
         printf("post mandatory args:\n");
         dump_recur(mrb, n->car, offset+2);
       }
-      if (n->cdr) {
+      n = n->cdr;
+      if (n) {
         dump_prefix(n, offset+1);
-        printf("blk=&%s\n", mrb_sym2name(mrb, sym(n->cdr)));
+        printf("blk=&%s\n", mrb_sym2name(mrb, sym(n)));
       }
     }
     mrb_parser_dump(mrb, tree->cdr->car, offset+1);

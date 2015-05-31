@@ -48,6 +48,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     ScriptEngineManager::getInstance()->setScriptEngine(engine);
     
     engine->addSearchPath("src");
+    FileUtils::getInstance()->addSearchPath("src");
     engine->executeScriptFile("main.rb");
     
     return true;
